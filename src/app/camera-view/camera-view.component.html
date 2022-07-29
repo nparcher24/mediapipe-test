@@ -1,0 +1,40 @@
+<div class="absolute inset-0 bg-black">
+  <video
+    #inputVideo
+    style="transform: scale(-1, 1)"
+    class="w-screen h-screen absolute inset-0 object-cover"
+  ></video>
+  <canvas
+    #outputCanvas
+    style="transform: scale(-1, 1)"
+    class="w-screen h-screen absolute inset-0 object-cover"
+  ></canvas>
+  <div class="flex w-full justify-between p-4">
+    <button
+      (click)="cameraRunning ? stopCamera() : resizeAllTheThings()"
+      [ngClass]="[
+        cameraRunning
+          ? 'bg-red-300 border-red-700 text-red-700'
+          : 'bg-green-300 border-green-700 text-green-700',
+        'px-4 py-2 rounded-md border-2 shadow-lg transition duration-300  left-4 top-4 font-bold text-lg hover:opacity-90'
+      ]"
+    >
+      {{ cameraRunning ? "STOP CAMERA" : "START CAMERA" }}
+    </button>
+    <button
+      (click)="cameraRunning ? stopCamera() : resizeAllTheThings()"
+      [ngClass]="[
+        cameraRunning
+          ? 'bg-red-300 border-red-700 text-red-700'
+          : 'bg-green-300 border-green-700 text-green-700',
+        'px-4 py-2 rounded-md border-2 shadow-lg transition duration-300  left-4 top-4 font-bold text-lg hover:opacity-90'
+      ]"
+    >
+      {{ cameraRecording ? "STOP RECORDING" : "START RECORDING" }}
+    </button>
+  </div>
+</div>
+<div #controlPanel class="control-panel"></div>
+<!-- <div class="square-box">
+  <div #landmarkGridContainer class="landmark-grid-container"></div>
+</div> -->
